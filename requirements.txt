@@ -1,0 +1,5 @@
+websockets>=11.0.3
+aiohttp>=3.8.5
+PyYAML>=6.0.1
+ipaddress>=1.0.23
+asyncio-mqtt>=0.11.1

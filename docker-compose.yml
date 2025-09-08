@@ -1,0 +1,15 @@
+services:
+  bgp-listener:
+    build: .
+    container_name: bgp-listener
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+      - SLACK_WEBHOOK=${SLACK_WEBHOOK}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

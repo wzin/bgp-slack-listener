@@ -1,0 +1,29 @@
+# BGP Listener Configuration
+# slack_webhook will be read from SLACK_WEBHOOK environment variable
+
+# ASNs to monitor (will match anywhere in AS path)
+monitored_asns:
+  - 3356   # Level 3
+  - 174    # Cogent
+  - 1299   # Telia
+  - 43253  # CBT
+  - 51747  # Internet Vikings (ettnet)
+
+# IP prefixes to monitor (CIDR format)
+monitored_prefixes:
+  - "185.236.43.0/24" # MI
+  - "185.159.186.0/24" # NJ
+  - "185.159.185.0/24" # ON
+  - "45.150.75.0/24" # CT + PA
+
+# RIS collectors to subscribe to
+ris_collectors:
+  - "rrc21"
+  - "rrc00"
+  - "rrc11"
+
+# Connection settings
+reconnect_delay: 5  # seconds to wait before reconnecting
+max_reconnect_attempts: 0  # 0 = infinite retries
+slack_retry_attempts: 3
+slack_retry_delay: 2
