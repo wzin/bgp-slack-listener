@@ -192,9 +192,9 @@ class BGPListener:
         return message
 
     async def _print_stats(self):
-        """Print statistics every 60 seconds"""
+        """Print statistics every 5 minutes"""
         while True:
-            await asyncio.sleep(60)
+            await asyncio.sleep(300)
             filtered_messages = sum(self.message_counts.values())
             self.logger.info("=== BGP Listener Statistics ===")
             self.logger.info(f"TOTAL BGP messages received: {self.total_bgp_messages}")
